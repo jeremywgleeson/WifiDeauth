@@ -1,7 +1,7 @@
 # WifiDeauth
 
-Simple bash script to spam deauthentication packets with aircrack-ng which effectively jams the network
+Simple bash script to spam deauthentication packets with aircrack-ng which effectively jams the network. Uses text based gui and automates scannning
 
-Uses text-based gui
+Requires macchanger and aircrack-ng
 
 ONLY USE THIS SCRIPT ON DEVICES/NETWORKS YOU PERSONALLY OWN OR HAVE EXPLICIT PERMISSION TO ATTACK
