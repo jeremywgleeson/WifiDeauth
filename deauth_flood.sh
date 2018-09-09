@@ -1,6 +1,6 @@
 #!/bin/bash
 
-##deauth_flood.sh v1.1 by deodamnatus
+##deauth_flood.sh v1.1 by jeremywgleeson
 ##now with support to scan for and target a specific device on the network. Look up MAC id device correlation on the internet to get a sense for device type
 ##floods deauthentication packets to a router/specific device
 
