@@ -18,7 +18,8 @@ echo Enter interface:
 read interface
 airmon-ng start $interface
 airmon-ng check kill
-interface+=mon
+##interface+=mon
+interface=mon0
 
 ## spoof MAC address to avoid detection
 echo Spoofing MAC address
